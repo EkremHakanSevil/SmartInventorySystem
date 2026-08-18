@@ -1,54 +1,84 @@
 package com.inventory.model;
 
+import java.math.BigDecimal;
+
 public class Product {
-    private int id;
-    private String name;
+    private int productId;
+    private String productName;
     private String category;
     private int stockQuantity;
     private int minThreshold;
-    private double unitPrice;
+    private BigDecimal unitPrice;
 
-    public Product() {}
+    // Boþ Constructor (DAO iþlemleri için)
+    public Product() {
+    }
 
-    public Product(int id, String name, String category, int stockQuantity, int minThreshold, double unitPrice) {
-        this.id = id;
-        this.name = name;
+    // Parametreli Constructor (Yeni ürün ekleme için)
+    public Product(String productName, String category, int stockQuantity, int minThreshold, BigDecimal unitPrice) {
+        this.productName = productName;
         this.category = category;
         this.stockQuantity = stockQuantity;
         this.minThreshold = minThreshold;
         this.unitPrice = unitPrice;
     }
 
-    public Product(String name, String category, int stockQuantity, int minThreshold, double unitPrice) {
-        this.name = name;
+    // Tam Constructor (Tüm alanlarla)
+    public Product(int productId, String productName, String category, int stockQuantity, int minThreshold, BigDecimal unitPrice) {
+        this.productId = productId;
+        this.productName = productName;
         this.category = category;
         this.stockQuantity = stockQuantity;
         this.minThreshold = minThreshold;
         this.unitPrice = unitPrice;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    // Getter ve Setter Metotlarý
+    public int getProductId() {
+        return productId;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
-    public String getCategory() { return category; }
-    public void setCategory(String category) { this.category = category; }
+    public String getProductName() {
+        return productName;
+    }
 
-    public int getStockQuantity() { return stockQuantity; }
-    public void setStockQuantity(int stockQuantity) { this.stockQuantity = stockQuantity; }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-    public int getMinThreshold() { return minThreshold; }
-    public void setMinThreshold(int minThreshold) { this.minThreshold = minThreshold; }
+    public String getCategory() {
+        return category;
+    }
 
-    public double getUnitPrice() { return unitPrice; }
-    public void setUnitPrice(double unitPrice) { this.unitPrice = unitPrice; }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-    @Override
-    public String toString() {
-        return "Product [ID=" + id + ", Ýsim=" + name + ", Kategori=" + category + 
-               ", Stok=" + stockQuantity + ", Kritik Eþik=" + minThreshold + 
-               ", Fiyat=" + unitPrice + " TL]";
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
+    public int getMinThreshold() {
+        return minThreshold;
+    }
+
+    public void setMinThreshold(int minThreshold) {
+        this.minThreshold = minThreshold;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
     }
 }
